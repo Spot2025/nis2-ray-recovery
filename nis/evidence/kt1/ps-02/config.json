@@ -1,0 +1,29 @@
+{
+  "steps": 20,
+  "workers": 2,
+  "batch_size": 32,
+  "seed": 2026,
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "data_root": "runs/data",
+  "output": "runs/ps-pinned-02",
+  "allow_other_ray": false,
+  "dataset": "MNIST/train",
+  "dataset_size": 60000,
+  "dataset_sha256": "adf48a004bfdaa1e64c81572271f57bc0fc5d218c18681fffd8ff8ada4e26d41",
+  "python": "3.12.11",
+  "platform": "macOS-15.7.9-arm64-arm-64bit",
+  "ray_version": "3.0.0.dev0",
+  "ray_commit": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+  "torch": "2.14.1",
+  "torchvision": "0.29.1",
+  "numpy": "2.5.4",
+  "torch_threads": 1,
+  "source_sha256": {
+    "__init__.py": "4ef04546aea917ff5ed958eb6e9d2585fa31d02828ae829962047179348217c7",
+    "model.py": "9971a8184525535452c6cb39dd24201bf4c05a1467edea0be84abfa446ff8304",
+    "pilot.py": "b07ad95a6be799c22382a809e76c71d6a5db50415eddd497a98f5699c6ee4b61",
+    "verify.py": "de3186c4d32e7062a9d9f7de7c2c09d18cda8170016a3738b7e429c32db94c63"
+  },
+  "started_at": "2026-10-22T13:55:52.867972+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "ray_commit": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+  "steps_per_run": 20,
+  "identical_tensor_hashes": {
+    "weights": "505d22fc0b45431cef328d4e21c3e5cc440724296c2438e48482bfdfe363fa40",
+    "momentum": "8e9e39f88d23b624816a733143d5da5182361272112b4d14e0867795738b4159"
+  },
+  "verification": [
+    {
+      "status": "passed",
+      "reference": "sequential combined-batch SGD with momentum",
+      "steps": 20,
+      "missing_or_duplicate_step_ids": 0,
+      "weights_max_abs_error": 5.960464477539063e-08,
+      "momentum_max_abs_error": 5.960464477539062e-07,
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "ray_commit_of_pilot": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+      "limitations": "No injected failures; shared model/math library; same host/library versions"
+    },
+    {
+      "status": "passed",
+      "reference": "sequential combined-batch SGD with momentum",
+      "steps": 20,
+      "missing_or_duplicate_step_ids": 0,
+      "weights_max_abs_error": 5.960464477539063e-08,
+      "momentum_max_abs_error": 5.960464477539062e-07,
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "ray_commit_of_pilot": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+      "limitations": "No injected failures; shared model/math library; same host/library versions"
+    }
+  ],
+  "corrupt_momentum_rejected": true,
+  "stale_passed_report_replaced": true,
+  "corruption_delta": 1.0
+}

@@ -1,5 +1,13 @@
 # Технические материалы
 
+- [КТ1: назначенная ревизия, ML-пилот и доступность метрик](checkpoints/01.md).
+- [Описание проекта](project.md) и [план эксперимента](experiment-plan.md).
+- [Сборка Ray на macOS ARM64](build-ray-macos.md).
+- [Новые результаты на назначенном коммите](evidence/kt1/).
+
+Ниже сохранены исторические проверки счётчиков на Ray 2.59.0.
+Все три сценария также повторены на назначенной ревизии, см. КТ1 выше.
+
 - [Среда и версии](environment.md).
 - [Результат проверки счётчика](evidence/counter.json).
 - [Результат перезапуска: 50 операций до сбоя, 50 после](evidence/counter-restart.json).
@@ -59,7 +67,7 @@ JSON сохраняется клиентом после эксперимента
 ```bash
 python examples/counter_checkpoint.py --output nis/evidence/counter-checkpoint.json
 python examples/counter_checkpoint.py --before-crash 7 --after-restart 3 --output nis/evidence/counter-checkpoint-7-3.json
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -p test_counter_checkpoint.py -v
 ```
 
 Актор записывает новое значение в файл перед возвратом ответа на `increment()`.

@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-10-22T13:53:25.368674+00:00",
+  "ray_commit": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+  "source_changes": [
+    "Only replace the upstream _version.py packaging placeholder with the verified Git SHA; no runtime source changes."
+  ],
+  "wheel_path": "work/build/wheels/ray-3.0.0.dev0-cp312-cp312-macosx_15_0_arm64.whl",
+  "wheel_sha256": "ea41d8545ea5b00cc0a4dd910cf00b06776a1fae36f5d4f39d381e77f9b42903",
+  "wheel_size_bytes": 34090892,
+  "wheel_tag": "cp312-cp312-macosx_15_0_arm64",
+  "wheel_version_py_matches_stamped_source": true,
+  "bazel": "7.5.0",
+  "core_build_elapsed_seconds": 506.013,
+  "bazel_total_actions": 9376,
+  "build_log": "work/setup/build-logs/build-03.log",
+  "checks": {
+    "counter": {
+      "status": "passed",
+      "actual_value": 100,
+      "report": "runs/pinned-macos/counter.json"
+    },
+    "counter-restart": {
+      "status": "passed",
+      "actual_value": 50,
+      "report": "runs/pinned-macos/counter-restart.json"
+    },
+    "counter-checkpoint": {
+      "status": "passed",
+      "actual_value": 100,
+      "report": "runs/pinned-macos/counter-checkpoint.json"
+    }
+  },
+  "checkpoint_unit_tests": {
+    "passed": 3,
+    "log": "runs/pinned-macos/checkpoint-unit-tests.log"
+  }
+}

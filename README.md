@@ -10,7 +10,34 @@
 · [Карточка команды](https://distsys.ru/osukhoroslov/nis2/src/branch/main/projects/team-10.md)
 · [Статья Ray, OSDI 2018](https://www.usenix.org/conference/osdi18/presentation/moritz)
 
-## Что уже есть
+## КТ1: обучение с parameter server
+
+Рабочая постановка проекта — небольшое синхронное обучение на MNIST:
+акторы данных, обычные задачи расчёта градиентов и актор общей модели.
+На назначенном коммите Ray выполнены два пилота по 20 шагов; результат
+проверен отдельным последовательным эталоном по весам, momentum и входным батчам.
+
+- [Описание проекта](nis/project.md).
+- [План эксперимента](nis/experiment-plan.md).
+- [КТ1: проверки и свидетельства](nis/checkpoints/01.md).
+- [Устройство пилота и разбор файлов](docs/parameter-server.md).
+- [Среда](nis/environment.md) и [нативная сборка Ray на macOS](nis/build-ray-macos.md).
+
+После подготовки среды с назначенным Ray:
+
+```bash
+source work/venvs/ray-pinned/bin/activate
+python -m pip install -r requirements-pilot-deps.txt
+python -m ray_ps.pilot --steps 20 --workers 2 --batch-size 32 --output runs/ps-01
+python -m ray_ps.verify --run-dir runs/ps-01
+python -m unittest discover -s tests -v
+```
+
+Первый запуск загружает MNIST. Каталог результата должен быть новым.
+Восстановление обучения и процессный baseline описаны в плане и ещё не
+реализованы. Пилот проверяет технические предпосылки КТ1.
+
+## Учебные примеры счётчика
 
 Первый учебный пример: один актор Ray хранит счётчик и выполняет 100 команд
 «прибавить 1». Программа проверяет начальное значение, результат каждой операции,
@@ -26,7 +53,7 @@
 Третий пример сохраняет значение в файл после каждого прибавления и читает
 его в конструкторе. После падения процесса счётчик продолжает с прежнего значения.
 
-## Первый запуск
+## Первый запуск учебного счётчика
 
 Нужен Python 3.12. Все команды выполняются в корне этого репозитория.
 
@@ -164,7 +191,7 @@ python examples/counter_checkpoint.py --before-crash 7 --after-restart 3
 ## Проверки работы с checkpoint
 
 ```bash
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -p test_counter_checkpoint.py -v
 ```
 
 Три теста без запуска кластера проверяют: сохранность прежнего checkpoint
@@ -173,14 +200,14 @@ python -m unittest discover -s tests -v
 
 ## Версия Ray
 
-Для учебных примеров используем опубликованный пакет **Ray 2.59.0**.
-Точные версии зависимостей зафиксированы в `requirements.txt`.
+Основная ревизия проекта — `2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f`.
+Она собрана и проверена нативно на macOS ARM64, версия пакета `3.0.0.dev0`.
+Результаты КТ1 находятся в `nis/evidence/kt1/`.
 
-В задании основная ревизия Ray — `2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f`.
-Готовая официальная сборка этой ревизии для macOS arm64 / Python 3.12
-по стандартному адресу на 22.10.2026 вернула HTTP 404.
-Сохранённые результаты примеров получены на релизе 2.59.0.
-Подробности: [среда и ограничения](nis/environment.md).
+Историческая учебная среда `.venv/` и `requirements.txt` сохраняют Ray 2.59.0;
+её результаты лежат непосредственно в `nis/evidence/`. Новая среда
+`work/venvs/ray-pinned/` отделена от неё. Подробности:
+[среда и ограничения](nis/environment.md).
 
 ## Навигация
 
