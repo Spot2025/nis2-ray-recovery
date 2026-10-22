@@ -1,0 +1,53 @@
+{
+  "scenario": "actor_restart_with_file_checkpoint",
+  "status": "passed",
+  "checked_at_utc": "2026-10-22T11:16:52.265424+00:00",
+  "operations_before_crash": 7,
+  "operations_after_restart": 3,
+  "acknowledged_increment_operations": 10,
+  "expected_value": 10,
+  "actual_value": 10,
+  "lost_acknowledged_increments": 0,
+  "initial": {
+    "value": 0,
+    "pid": 16317
+  },
+  "before_crash": {
+    "value": 7,
+    "pid": 16317
+  },
+  "after_restart": {
+    "value": 7,
+    "pid": 16320
+  },
+  "final": {
+    "value": 10,
+    "pid": 16320
+  },
+  "checkpoint": {
+    "path": "runs/counter-checkpoint-bvcirct1/state.json",
+    "storage": "local_filesystem_same_machine",
+    "saved_after_each_increment": true,
+    "before_crash": {
+      "value": 7
+    },
+    "after_restart": {
+      "value": 7
+    },
+    "final": {
+      "value": 10
+    }
+  },
+  "crash_error": "ActorUnavailableError",
+  "operation_results_match": true,
+  "actor_pid_changed": true,
+  "actor_state_restored": true,
+  "driver_pid": 16287,
+  "environment": {
+    "python": "3.12.11",
+    "ray": "2.59.0",
+    "ray_commit": "dd83c3a703a5422d0b47f142cb380c6330817608",
+    "system": "Darwin",
+    "architecture": "arm64"
+  }
+}
