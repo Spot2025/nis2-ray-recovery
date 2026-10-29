@@ -1,5 +1,5 @@
 # Python 3.12; dependencies of the pilot, excluding Ray.
-# Install the exact Ray artifact separately; see nis/environment.md.
+# Install the exact Ray artifact separately; see README.md (setup and build).
 attrs==26.1.0
 certifi==2026.10.19
 charset-normalizer==3.5.2
