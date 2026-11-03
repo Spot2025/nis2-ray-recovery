@@ -1,0 +1,12 @@
+{
+  "status": "completed_pending_independent_verification",
+  "steps": 20,
+  "gradient_computations": 40,
+  "p95_step_ms": 84.75425000000108,
+  "p99_step_ms": 1246.3743499999982,
+  "timing_scope": "all pilot steps, including cold worker startup; descriptive only",
+  "weights_sha256": "505d22fc0b45431cef328d4e21c3e5cc440724296c2438e48482bfdfe363fa40",
+  "momentum_sha256": "8e9e39f88d23b624816a733143d5da5182361272112b4d14e0867795738b4159",
+  "ray_commit": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+  "failures_injected": 0
+}

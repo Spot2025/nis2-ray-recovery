@@ -1,0 +1,11 @@
+test_corrupt_checkpoint_is_not_silently_reset (test_counter_checkpoint.CheckpointFailureTests.test_corrupt_checkpoint_is_not_silently_reset) ... ok
+test_failed_save_keeps_previous_checkpoint (test_counter_checkpoint.CheckpointFailureTests.test_failed_save_keeps_previous_checkpoint) ... ok
+test_incomplete_temporary_file_is_not_restored (test_counter_checkpoint.CheckpointFailureTests.test_incomplete_temporary_file_is_not_restored) ... ok
+test_missing_and_duplicate_updates_are_rejected (test_pilot_verification.ManifestVerificationTests.test_missing_and_duplicate_updates_are_rejected) ... ok
+test_reference_crosses_epochs_without_dropping_examples (test_pilot_verification.ManifestVerificationTests.test_reference_crosses_epochs_without_dropping_examples) ... ok
+test_wrong_examples_and_shards_are_rejected (test_pilot_verification.ManifestVerificationTests.test_wrong_examples_and_shards_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK

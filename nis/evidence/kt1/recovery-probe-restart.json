@@ -1,0 +1,195 @@
+{
+  "status": "passed",
+  "mode": "restart",
+  "python": "3.12.11",
+  "ray_version": "3.0.0.dev0",
+  "ray_commit": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+  "before": {
+    "value": 8,
+    "pid": 51476
+  },
+  "restored": {
+    "value": 0,
+    "pid": 51479
+  },
+  "final": {
+    "value": 8,
+    "pid": 51479
+  },
+  "acknowledged_operations": 16,
+  "acknowledged_effects_lost": 8,
+  "client_attempts": 16,
+  "repeated_increment_attempts": 0,
+  "recovery_to_first_ack_ms": 1985.598958,
+  "p95_increment_ms": 0.3745005,
+  "p99_increment_ms": 0.4004001,
+  "events": [
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-1",
+      "attempt": 1,
+      "sent_ns": 1541050224851541,
+      "ack_ns": 1541050225212291,
+      "value": 1,
+      "duration_ns": 360750
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-2",
+      "attempt": 1,
+      "sent_ns": 1541050225216291,
+      "ack_ns": 1541050225540375,
+      "value": 2,
+      "duration_ns": 324084
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-3",
+      "attempt": 1,
+      "sent_ns": 1541050225541875,
+      "ack_ns": 1541050225866250,
+      "value": 3,
+      "duration_ns": 324375
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-4",
+      "attempt": 1,
+      "sent_ns": 1541050225868083,
+      "ack_ns": 1541050226177041,
+      "value": 4,
+      "duration_ns": 308958
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-5",
+      "attempt": 1,
+      "sent_ns": 1541050226178125,
+      "ack_ns": 1541050226459041,
+      "value": 5,
+      "duration_ns": 280916
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-6",
+      "attempt": 1,
+      "sent_ns": 1541050226460041,
+      "ack_ns": 1541050226722333,
+      "value": 6,
+      "duration_ns": 262292
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-7",
+      "attempt": 1,
+      "sent_ns": 1541050226723000,
+      "ack_ns": 1541050226975541,
+      "value": 7,
+      "duration_ns": 252541
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-8",
+      "attempt": 1,
+      "sent_ns": 1541050226976166,
+      "ack_ns": 1541050227263208,
+      "value": 8,
+      "duration_ns": 287042
+    },
+    {
+      "event": "crash_requested",
+      "time_ns": 1541050227530375,
+      "pid": 51476
+    },
+    {
+      "event": "crash_observed",
+      "time_ns": 1541052210430500,
+      "error": "ActorUnavailableError"
+    },
+    {
+      "event": "actor_ready",
+      "time_ns": 1541052212719000,
+      "value": 0,
+      "pid": 51479
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-9",
+      "attempt": 1,
+      "sent_ns": 1541052212722458,
+      "ack_ns": 1541052213129333,
+      "value": 1,
+      "duration_ns": 406875
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-10",
+      "attempt": 1,
+      "sent_ns": 1541052213132166,
+      "ack_ns": 1541052213488208,
+      "value": 2,
+      "duration_ns": 356042
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-11",
+      "attempt": 1,
+      "sent_ns": 1541052213489416,
+      "ack_ns": 1541052213853125,
+      "value": 3,
+      "duration_ns": 363709
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-12",
+      "attempt": 1,
+      "sent_ns": 1541052213854208,
+      "ack_ns": 1541052214151458,
+      "value": 4,
+      "duration_ns": 297250
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-13",
+      "attempt": 1,
+      "sent_ns": 1541052214152375,
+      "ack_ns": 1541052214447666,
+      "value": 5,
+      "duration_ns": 295291
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-14",
+      "attempt": 1,
+      "sent_ns": 1541052214448375,
+      "ack_ns": 1541052214727208,
+      "value": 6,
+      "duration_ns": 278833
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-15",
+      "attempt": 1,
+      "sent_ns": 1541052214728125,
+      "ack_ns": 1541052215010083,
+      "value": 7,
+      "duration_ns": 281958
+    },
+    {
+      "event": "increment_ack",
+      "operation_id": "inc-16",
+      "attempt": 1,
+      "sent_ns": 1541052215010750,
+      "ack_ns": 1541052215284666,
+      "value": 8,
+      "duration_ns": 273916
+    }
+  ],
+  "limitations": [
+    "Recovery interval starts at the driver's crash request, not the exact process death",
+    "Increment latency excludes the readiness wait; recovery interval includes it",
+    "Automatic read retries are not counted as increment attempts",
+    "Small pilot proves data availability, not a stable tail-latency estimate",
+    "No in-flight increment at crash; ambiguous outcomes and replay not implemented"
+  ]
+}

@@ -1,0 +1,4 @@
+# CPU pilot; install Ray separately at the revision required by the course.
+torch==2.14.1
+torchvision==0.29.1
+numpy==2.5.4

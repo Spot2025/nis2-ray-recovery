@@ -1,0 +1,40 @@
+{
+  "scenario": "actor_restart_without_persistence",
+  "status": "passed",
+  "checked_at_utc": "2026-10-22T13:52:33.156837+00:00",
+  "operations_before_crash": 50,
+  "operations_after_restart": 50,
+  "acknowledged_increment_operations": 100,
+  "expected_value_if_state_preserved": 100,
+  "expected_value_after_fresh_restart": 50,
+  "actual_value": 50,
+  "lost_acknowledged_increments": 50,
+  "initial": {
+    "value": 0,
+    "pid": 50691
+  },
+  "before_crash": {
+    "value": 50,
+    "pid": 50691
+  },
+  "after_restart": {
+    "value": 0,
+    "pid": 50694
+  },
+  "final": {
+    "value": 50,
+    "pid": 50694
+  },
+  "crash_error": "ActorUnavailableError",
+  "operation_results_match": true,
+  "actor_pid_changed": true,
+  "actor_state_reset": true,
+  "driver_pid": 50662,
+  "environment": {
+    "python": "3.12.11",
+    "ray": "3.0.0.dev0",
+    "ray_commit": "2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f",
+    "system": "Darwin",
+    "architecture": "arm64"
+  }
+}
