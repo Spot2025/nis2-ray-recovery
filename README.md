@@ -88,4 +88,4 @@ python examples/counter_checkpoint.py --output runs/counter-checkpoint.json
 и не хранится в репозитории. Лицензии библиотек поставляются с пакетами.
 Для сборки использованы [инструкция Ray](https://github.com/ray-project/ray/blob/2ff4d94078ee94b3c9e6e4552ad84f78bad7f75f/doc/source/ray-contribute/development.md)
 и [релиз Bazel 7.5.0](https://github.com/bazelbuild/bazel/releases/tag/7.5.0).
-Описание использования Codex — в [отчёте КТ1](nis/checkpoints/01.md#применение-генеративной-модели).
+Описание использования Codex — в [отчёте КТ1](nis/checkpoints/01.md#описание-применения-генеративной-модели).
